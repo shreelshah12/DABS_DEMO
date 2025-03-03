@@ -4,10 +4,10 @@ bundle:
   name: DABS_DEMO
   uuid: ea4001f4-54cd-4b2c-a1b8-29eea2cb5c21
 
-variables:
-  sp_name:
-    description: The service principal ID.
-    default: # your service principal ID
+# variables:
+#   sp_name:
+#     description: The service principal ID.
+#     default: # your service principal ID
 
 include:
   - resources/*.yml
