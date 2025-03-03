@@ -6,6 +6,8 @@ resources:
       ## Specify the 'catalog' field to configure this pipeline to make use of Unity Catalog:
       # catalog: catalog_name
       target: DABS_DEMO_${bundle.target}
+      serverless: true
+      catalog: dev_shreel
       libraries:
         - notebook:
             path: ../src/dlt_pipeline.ipynb
