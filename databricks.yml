@@ -2,7 +2,7 @@
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
   name: DABS_DEMO
-  uuid: ea4001f4-54cd-4b2c-a1b8-29eea2cb5c21
+  #uuid: ea4001f4-54cd-4b2c-a1b8-29eea2cb5c21
 
 # variables:
 #   sp_name:
