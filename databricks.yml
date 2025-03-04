@@ -21,12 +21,12 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-984752964297111.11.azuredatabricks.net
+      host: https://dbc-149ecd1b-edc2.cloud.databricks.com/
 
   prod:
     mode: production
     workspace:
-      host: https://adb-984752964297111.11.azuredatabricks.net
+      host: https://dbc-149ecd1b-edc2.cloud.databricks.com/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
       root_path: /Users/shreel.shah@databricks.com/.bundle/${bundle.name}/${bundle.target}
     permissions:
