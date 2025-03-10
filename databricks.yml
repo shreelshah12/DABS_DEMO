@@ -28,12 +28,12 @@ targets:
     workspace:
       host: https://dbc-149ecd1b-edc2.cloud.databricks.com/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
-      root_path: /Users/shreel.shah@databricks.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Users/348c59c5-a7b1-4d89-997f-3ff76a898ede/.bundle/${bundle.name}/${bundle.target}
     permissions:
       - user_name: shreel.shah@databricks.com
         level: CAN_MANAGE
     run_as:
-     user_name: shreel.shah@databricks.com
+     service_principal_name: 348c59c5-a7b1-4d89-997f-3ff76a898ede
 
 # prod:
 #     mode: production
