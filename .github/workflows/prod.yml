@@ -89,7 +89,7 @@ jobs:
 
       # Run the Databricks workflow named "ae_sim_pipeline " as defined in the
       # bundle that was just deployed.
-      - run: databricks bundle destroy
+      - run: databricks bundle destroy --auto-approve
         working-directory: .
         env:
           DATABRICKS_BUNDLE_ENV: prod
