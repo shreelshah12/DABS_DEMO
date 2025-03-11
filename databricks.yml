@@ -33,7 +33,7 @@ targets:
       - user_name: shreel.shah@databricks.com
         level: CAN_MANAGE
     run_as:
-     service_principal_name: 348c59c5-a7b1-4d89-997f-3ff76a898ede
+     service_principal_name: 348c59c5-a7b1-4d89-997f-3ff76a898ede #running as a service principal
 
 # prod:
 #     mode: production
