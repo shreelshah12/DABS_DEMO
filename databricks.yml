@@ -21,19 +21,19 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://dbc-149ecd1b-edc2.cloud.databricks.com/
+      host: https://adb-3660530327888257.17.azuredatabricks.net/
 
   prod:
     mode: production
     workspace:
-      host: https://dbc-149ecd1b-edc2.cloud.databricks.com/
+      host: https://adb-3660530327888257.17.azuredatabricks.net/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
-      root_path: /Users/348c59c5-a7b1-4d89-997f-3ff76a898ede/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Users/1b7b2f99-c600-4f4c-bda8-bc912f07b0dc/.bundle/${bundle.name}/${bundle.target}
     permissions:
       - user_name: shreel.shah@databricks.com
         level: CAN_MANAGE
     run_as:
-     service_principal_name: 348c59c5-a7b1-4d89-997f-3ff76a898ede #running as a service principal
+     service_principal_name: 1b7b2f99-c600-4f4c-bda8-bc912f07b0dc #running as a service principal
 
 # prod:
 #     mode: production
