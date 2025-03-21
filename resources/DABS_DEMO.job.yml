@@ -12,7 +12,7 @@ resources:
 
       email_notifications:
         on_failure:
-          - shreel.shah@databricks.com
+          - shreel.shah@databricks.com #email notification
 
       tasks:
         - task_key: notebook_task
