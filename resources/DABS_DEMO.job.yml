@@ -20,7 +20,7 @@ resources:
           notebook_task:
             notebook_path: ../src/notebook.ipynb #pointing to notebook path
         
-        - task_key: refresh_pipeline
+        - task_key: refresh_pipeline #refresh the pipeline
           depends_on:
             - task_key: notebook_task
           pipeline_task:
