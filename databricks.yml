@@ -2,12 +2,20 @@
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
   name: DABS_DEMO
-  #uuid: ea4001f4-54cd-4b2c-a1b8-29eea2cb5c21
 
-# variables:
-#   sp_name:
-#     description: The service principal ID.
-#     default: # your service principal ID
+variables:
+  job_cluster_1:
+    description: The classic compute job cluster to use in dev (in prod we will use serverless).
+    type: complex
+    default: 
+      spark_version: 15.4.x-scala2.12
+      node_type_id: Standard_DS3_v2
+      autoscale:
+        min_workers: 1
+        max_workers: 4
+  sp_name:
+    description: The service principal ID for owning and running production workloads.
+    default: bff83a9f-72a6-420b-b6d5-cad90d0a6b74
 
 include:
   - resources/*.yml
@@ -21,24 +29,23 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-3660530327888257.17.azuredatabricks.net/
+      host: https://adb-2890512295443133.13.azuredatabricks.net/
+    resources:
+      jobs:
+        DABS_DEMO_job:
+          tasks:
+            - task_key: notebook_task
+              new_cluster: ${var.job_cluster_1}
 
   prod:
     mode: production
     workspace:
-      host: https://adb-3660530327888257.17.azuredatabricks.net/
+      host: https://adb-2890512295443133.13.azuredatabricks.net/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
-      root_path: /Users/1b7b2f99-c600-4f4c-bda8-bc912f07b0dc/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
     permissions:
       - user_name: shreel.shah@databricks.com
         level: CAN_MANAGE
     run_as:
-     service_principal_name: 1b7b2f99-c600-4f4c-bda8-bc912f07b0dc #running as a service principal
+     service_principal_name: ${var.sp_name} 
 
-# prod:
-#     mode: production
-#     workspace:
-#       host: https://e2-demo-field-eng.cloud.databricks.com/
-#       root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
-#     run_as:
-#      service_principal_name: "${var.sp_name}"
