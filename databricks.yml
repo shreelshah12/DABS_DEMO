@@ -13,6 +13,9 @@ variables:
       autoscale:
         min_workers: 1
         max_workers: 4
+  warehouse_id:
+    lookup:
+      warehouse: "Serverless Starter Warehouse"
   sp_name:
     description: The service principal ID for owning and running production workloads.
     default: bff83a9f-72a6-420b-b6d5-cad90d0a6b74
