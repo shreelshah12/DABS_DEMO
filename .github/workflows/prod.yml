@@ -71,30 +71,6 @@ jobs:
           DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
 
-  # Bundle_Destroy:
-  #   name: "Bundle Destroy"
-  #   environment: Prod
-  #   runs-on: ubuntu-latest
 
-  #   needs:
-  #     - pipeline_update
-
-  #   steps:
-  #     # Check out this repo, so that this workflow can access it.
-  #     - uses: actions/checkout@v3
-
-  #     # Use the downloaded Databricks CLI.
-  #     - uses: databricks/setup-cli@main
-
-  #     # Run the Databricks workflow named "ae_sim_pipeline " as defined in the
-  #     # bundle that was just deployed.
-  #     - run: databricks bundle destroy --auto-approve
-  #       working-directory: .
-  #       env:
-  #         DATABRICKS_BUNDLE_ENV: prod
-  #         #DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
-  #         DATABRICKS_HOST: ${{ secrets.DB_HOST }}
-  #         DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
-  #         DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
           
   
