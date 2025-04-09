@@ -47,30 +47,30 @@ jobs:
         #   DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
         #   DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
 
-  # Validate, deploy, and then run the bundle.
-  pipeline_update:
-    name: "Run pipeline update"
-    environment: Dev
-    runs-on: ubuntu-latest
+  # # Validate, deploy, and then run the bundle.
+  # pipeline_update:
+  #   name: "Run pipeline update"
+  #   environment: Dev
+  #   runs-on: ubuntu-latest
 
-    # Run the "deploy" job first.
-    needs:
-      - deploy
+  #   # Run the "deploy" job first.
+  #   needs:
+  #     - deploy
 
-    steps:
-      # Check out this repo, so that this workflow can access it.
-      - uses: actions/checkout@v3
+  #   steps:
+  #     # Check out this repo, so that this workflow can access it.
+  #     - uses: actions/checkout@v3
 
-      # Use the downloaded Databricks CLI.
-      - uses: databricks/setup-cli@main
+  #     # Use the downloaded Databricks CLI.
+  #     - uses: databricks/setup-cli@main
 
-      # Run the Databricks workflow named "ae_sim_pipeline " as defined in the
-      # bundle that was just deployed.
-      - run: databricks bundle run DABS_DEMO_pipeline --refresh-all
-        working-directory: .
-        env:
-          DATABRICKS_BUNDLE_ENV: dev
-          DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
-          DATABRICKS_HOST: ${{ secrets.DB_HOST }}
-        #   DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
-        #   DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
+  #     # Run the Databricks workflow named "ae_sim_pipeline " as defined in the
+  #     # bundle that was just deployed.
+  #     - run: databricks bundle run DABS_DEMO_pipeline --refresh-all
+  #       working-directory: .
+  #       env:
+  #         DATABRICKS_BUNDLE_ENV: dev
+  #         DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
+  #         DATABRICKS_HOST: ${{ secrets.DB_HOST }}
+  #       #   DATABRICKS_CLIENT_ID: ${{ secrets.SP_ID }}
+  #       #   DATABRICKS_CLIENT_SECRET: ${{ secrets.SP_SECRET }}
