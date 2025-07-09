@@ -32,7 +32,7 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-491387325098761.1.azuredatabricks.net/
+      host: https://adb-4171658961085377.17.azuredatabricks.net/
     resources:
       jobs:
         DABS_DEMO_job:
@@ -44,7 +44,7 @@ targets:
   prod:
     mode: production
     workspace:
-      host: https://adb-491387325098761.1.azuredatabricks.net/
+      host: https://adb-4171658961085377.17.azuredatabricks.net/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
       root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
     permissions:
