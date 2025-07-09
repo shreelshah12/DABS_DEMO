@@ -18,7 +18,7 @@ variables:
       warehouse: "Serverless Starter Warehouse"
   sp_name:
     description: The service principal ID for owning and running production workloads.
-    default: 26b56591-51ab-4b8d-a027-3fcb839bc062
+    default: 5a60d77b-6e58-410c-96c0-eba6e7468f42
 
 include:
   - resources/*.yml
