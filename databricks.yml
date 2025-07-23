@@ -15,10 +15,10 @@ variables:
         max_workers: 4
   warehouse_id:
     lookup:
-      warehouse: "Serverless Starter Warehouse"
+      warehouse: "Starter Warehouse"
   sp_name:
     description: The service principal ID for owning and running production workloads.
-    default: 5a60d77b-6e58-410c-96c0-eba6e7468f42
+    default: c30b2434-7f46-4407-8202-f936f702fc4b
 
 include:
   - resources/*.yml
@@ -32,7 +32,7 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-4171658961085377.17.azuredatabricks.net/
+      host: https://adb-4435910705354899.19.azuredatabricks.net/
     resources:
       jobs:
         DABS_DEMO_job:
@@ -44,7 +44,7 @@ targets:
   prod:
     mode: production
     workspace:
-      host: https://adb-4171658961085377.17.azuredatabricks.net/
+      host: https://adb-4435910705354899.19.azuredatabricks.net/
       # We explicitly specify /Workspace/Users/shreel.shah@databricks.com to make sure we only have a single copy.
       root_path: /Users/${var.sp_name}/.bundle/${bundle.name}/${bundle.target}
     permissions:
