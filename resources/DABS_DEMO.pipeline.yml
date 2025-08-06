@@ -7,7 +7,7 @@ resources:
       # catalog: catalog_name
       target: DABS_DEMO_${bundle.target}
       serverless: true
-      catalog: dev_shreel
+      catalog: dev_shreel #deploy pipeline to this catalog
       libraries:
         - notebook:
             path: ../src/dlt_pipeline.ipynb
