@@ -15,7 +15,7 @@ resources:
 
       email_notifications:
         on_failure:
-          - shreel.shah@databricks.com
+          - shreel.shah@databricks.com #sends email on failure
 
       tasks:
         - task_key: notebook_task
