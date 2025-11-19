@@ -6,7 +6,7 @@ resources:
       ## Specify the 'catalog' field to configure this pipeline to make use of Unity Catalog:
       # catalog: catalog_name
       target: DABS_DEMO_${bundle.target}
-      serverless: true
+      serverless: true #defaults to using serverless compute
       catalog: dev_shreel #deploy pipeline to this catalog
       libraries:
         - notebook:
