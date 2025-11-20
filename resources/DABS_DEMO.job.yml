@@ -27,4 +27,4 @@ resources:
           depends_on:
             - task_key: notebook_task
           pipeline_task:
-            pipeline_id: ${resources.pipelines.DABS_DEMO_pipeline.id}
+            pipeline_id: ${resources.pipelines.DABS_DEMO_pipeline.id} #pipeline id from DABS
